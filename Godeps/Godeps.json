@@ -1,0 +1,5 @@
+{
+	"ImportPath": "github.com/macedo/tcp-echo-server",
+	"GoVersion": "go1.2.2",
+	"Deps": []
+}
