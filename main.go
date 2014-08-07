@@ -4,13 +4,19 @@ import (
 	"io"
 	"log"
 	"net"
+	"os"
 )
 
 func handleConnection(c net.Conn) {
 	io.Copy(c, c)
 }
 func main() {
-	listener, err := net.Listen("tcp", "localhost:1987")
+	var port = os.Getenv("PORT")
+	if port == "" {
+		port = "1987"
+		log.Println("INFO: No PORT environment variable detected, defaulting to " + port)
+	}
+	listener, err := net.Listen("tcp", ":"+port)
 	if err != nil {
 		log.Fatal(err)
 	}
