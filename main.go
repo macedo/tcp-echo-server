@@ -20,6 +20,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	log.Println("INFO: TCP Echo Server listening on port " + port)
 	defer listener.Close()
 
 	for {
