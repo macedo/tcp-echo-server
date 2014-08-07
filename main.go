@@ -26,6 +26,7 @@ func main() {
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
+			log.Println("ERROR: " + err.Error())
 			log.Fatal(err)
 		}
 
